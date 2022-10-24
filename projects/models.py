@@ -13,7 +13,7 @@ class Project(models.Model):
     )
 
     def __str__(self):
-        self.name
+        return self.name
 
 
 # Create your models here.
