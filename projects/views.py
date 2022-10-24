@@ -6,7 +6,7 @@ def show_project(request):
     project_list = Project.objects.all()
     context = {
         "project_list": project_list,
-        "number" : len(project_list),
+        "number_of_projects" : len(project_list),
     }
 
     return render(request, "projects/list.html", context)
