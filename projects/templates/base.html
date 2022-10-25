@@ -12,15 +12,17 @@
     <body>
         <header>
             <nav>
+                <ul>
                 {% if user.is_authenticated %}
-                <a href="{% url 'list_projects' %}">Home</a>
-                <a href="{% url 'create_project' %}">Create Project</a>
-                <a href="{% url 'logout' %}">Logout</a>
+                    <li><a href="{% url 'show_my_tasks' %}">My Tasks</a></li>
+                    <li><a href="{% url 'list_projects' %}">My Projects</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                    <li><a href="{% url 'create_project' %}">Create Project</a></li>
                 {% else %}
-                <a href="{% url 'signup' %}">Sign up</a>
-                <a href="{% url 'login' %}">Login</a>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'signup' %}">Sign up</a></li>
                 {% endif %}
-              </ul>
+                </ul>
             </nav>
           </header>
         {% block content %}
