@@ -13,5 +13,11 @@ def project_list(request):
 
     return render(request, "projects/list.html", context)
 
-
+@login_required
+def detail_view(request, id):
+    project_details = Project.objects.get(id=id)
+    context = {
+        "project_details": project_details
+    }
+    return render(request, "projects/detail.html", context)
 # Create your views here.
