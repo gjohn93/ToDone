@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
-{% block title %} My Tasks {% endblock title %}
+{% block title %}
+    My Tasks
+{% endblock title %}
 {% block content %}
     <main>
         <div>
@@ -10,25 +12,27 @@
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th> Start Date </th>
-                            <th> Due Date </th>
-                            <th> Is Completed </th>
+                            <th>Start Date</th>
+                            <th>Due Date</th>
+                            <th>Is Completed</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for my_task in my_task_list %}
                             <tr>
-                                <td>{{my_task.name}} </a></td>
-                                <td>{{my_task.start_date}}</td>
-                                <td>{{my_task.due_date}}</td>
-                                <td>{{my_task.iscompleted|yesno}}</td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-                {% else %}
-                <p>You have no tasks</p>
-            {% endif %}
-        </div>
-    </main>
+                                <td>
+                                {{ my_task.name }} </a>
+                            </td>
+                            <td>{{ my_task.start_date }}</td>
+                            <td>{{ my_task.due_date }}</td>
+                            <td>{{ my_task.iscompleted|yesno }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>You have no tasks</p>
+        {% endif %}
+    </div>
+</main>
 {% endblock content %}

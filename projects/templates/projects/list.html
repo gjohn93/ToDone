@@ -12,19 +12,21 @@
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th> Number of tasks </th>
+                            <th>Number of tasks</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for project in project_list %}
                             <tr>
-                                <td><a href="{% url 'show_project' project.id %}">{{project.name}}</a></td>
-                                <td> {{project.tasks.all|length}} </td>
+                                <td>
+                                    <a href="{% url 'show_project' project.id %}">{{ project.name }}</a>
+                                </td>
+                                <td>{{ project.tasks.all|length }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>
                 </table>
-                {% else %}
+            {% else %}
                 <p>You are not assigned to any projects</p>
             {% endif %}
         </div>
