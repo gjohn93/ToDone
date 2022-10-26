@@ -12,5 +12,3 @@ class TaskAdmin(admin.ModelAdmin):
         "project",
         "assignee",
     )
-
-# Register your models here.

@@ -3,7 +3,6 @@ from django.contrib.auth.decorators import login_required
 from tasks.models import Task
 from tasks.forms import TaskForm
 
-# Create your views here.
 
 @login_required
 def create_task(request):
@@ -22,10 +21,9 @@ def create_task(request):
 
     return render(request, "tasks/create.html", context)
 
+
 @login_required
 def show_my_tasks(request):
-    my_tasks = Task.objects.filter(assignee = request.user)
-    context = {
-        "my_task_list" : my_tasks
-    }
+    my_tasks = Task.objects.filter(assignee=request.user)
+    context = {"my_task_list": my_tasks}
     return render(request, "tasks/mine.html", context)
